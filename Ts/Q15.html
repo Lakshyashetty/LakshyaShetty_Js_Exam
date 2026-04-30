@@ -1,0 +1,29 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <button onclick="inc()" type="submit">Incremment</button>
+        <button onclick="dec()" type="submit">Decrement</button>
+        <button onclick="res()" type="submit">Reset</button>
+    <p> count the transaction <span id="count" >0</span> </p>
+    <script>
+        let count=0;
+function inc() {
+            count++;
+            document.getElementById("count").textContent=count;
+        }
+        function dec() {
+            count--;
+            document.getElementById("count").textContent=count;
+        }
+        function res() {
+            count=0;
+            document.getElementById("count").textContent=count;
+        }
+    </script>
+    </body>
+    </html>

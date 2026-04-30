@@ -1,0 +1,46 @@
+
+//rstoreform localStorage
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Name:<input type="text" id="name">
+    Email: <input type="text" id="email">
+    Password: <input type="text" id="password">
+
+    <button id="b1">Submit</button>
+
+    <script>
+
+        const b1 =document.getElementById("b1");
+        b1.addEventListener("click",()=>{
+            const name=document.getElementById("name").value;
+            const email=document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            
+            const nameRegex=/^[A-Za-z]+$/
+            const emailRegex=/[^\s\.@]+@[^\s@\d]+\.[^\s@]/
+            const passwordRegex=/(?=.*[A-Z])(?=.*[a-z])(?=.*[\d]).{8,}/
+
+
+            if(!nameRegex.test(name)){
+                alert("Not a valid name");
+            }
+            else if(!emailRegex.test(email)){
+                alert("not a valid email")
+            }
+            else if(!passwordRegex.test(password)){
+                alert("not a valid password")
+            }
+            
+            
+        })
+  
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   Id: <input type="text" id="id">
+Name: <input type="text" name="" id="name">
+balance: <input type="text" id="balance">
+<button type="submit"id="btn">Submit</button>
+<script>
+    const btn=document.getElementById("btn");
+  btn.addEventListener("click",()=>{
+    const id=document.getElementById("id").value;
+      const name=document.getElementById("name").value;
+      const balance=document.getElementById("balance").value;
+      const user=[{
+        id:id,
+        name:name,
+        balance:balance
+      }]
+      localStorage.setItem("Account Detail",JSON.stringify(user));
+      alert( localStorage.getItem("Account Detail",JSON.stringify(user)));
+  })
+  
+</script>
+</body>
+</html>     
