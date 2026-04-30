@@ -13,6 +13,4 @@ function withdraw(balance, amount) {
   }
 }
 
-// function calls
 withdraw(5000, 2000);  
-withdraw(5000, 7000); 
