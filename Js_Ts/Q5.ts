@@ -1,7 +1,7 @@
 interface TransactionService{
     processTransaction(isavailable:boolean):string
 }
-class Teler implements TransactionService{
+class Teller implements TransactionService{
     name:string;
     constructor(name:string){
         this.name=name;

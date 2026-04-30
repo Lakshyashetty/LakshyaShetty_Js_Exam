@@ -2,7 +2,7 @@ const { log } = require('console');
 const {db,connectdb}=require('./db');
 connectdb()
 function CreateTable() {
-    db.query("create table emp2(id int ,name varchar(20),salary decimal(10,2))",(err)=>{
+    db.query("create table cust(id int ,name varchar(20),account decimal(10,2))",(err)=>{
 if (err) {
     console.log(err);
     
@@ -14,9 +14,9 @@ if (err) {
     })
 }
 // CreateTable();
-function InsertData(id,name,salary){
-    const user={id,name,salary};
-    db.query("insert into emp2 set ?",user,(err)=>{
+function InsertData(id,name,account){
+    const user={id,name,account};
+    db.query("insert into cust set ?",user,(err)=>{
         if (err) {
            console.log(err);
             
@@ -26,10 +26,11 @@ function InsertData(id,name,salary){
         }
     })
 }
-// InsertData(102,"Rahul",32000);
-function UpdateData(id,salary) {
-    const upd=[salary,id];
-    db.query("update emp2 set salary=? where id=?",upd,(err)=>{
+// InsertData(101,"Laksh",32000);
+// InsertData(102,"Rahul",38000);
+function UpdateData(id,account) {
+    const upd=[account,id];
+    db.query("update cust set account=? where id=?",upd,(err)=>{
          if (err) {
            console.log(err);
             
@@ -39,10 +40,10 @@ function UpdateData(id,salary) {
         }
     })
 }
-// UpdateData(102,34000);
+// UpdateData(102,30000);
 function DeleteData(id) {
     const del=[id];
-    db.query("delete from emp2 where  id=?",del,(err)=>{
+    db.query("delete from cust where  id=?",del,(err)=>{
          if (err) {
            console.log(err);
             
@@ -54,7 +55,7 @@ function DeleteData(id) {
 }
 // DeleteData(102);
 function ShowData(){
-db.query("select * from emp2",(err,result)=>{
+db.query("select * from cust",(err,result)=>{
     if (err) {
         console.log(err);
 

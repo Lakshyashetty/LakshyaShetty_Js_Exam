@@ -17,7 +17,7 @@ transaction:8000
 }
 ]
 function MostActiveCustomer(customer) {
-    const max= Math.max(...customer.map((cust)=>cust.transaction));
-    return customer.find(cust => cust.transaction === max);
+    return max= Math.max(...customer.map((cust)=>cust.transaction));
+    // return customer.find(cust => cust.transaction === max);
 }
 console.log(MostActiveCustomer(customer));
