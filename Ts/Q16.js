@@ -1,17 +1,18 @@
-function Accountcreation(balance) {
-    try {
-     if (balance<=4000) {
-           console.log(" Can WithDaw Money");
-            
-    } else{
-        console.log(" Insufficient Money");
+function withdraw(balance, amount) {
+  try {
+   
+    if (amount > balance) {
+      throw new Error("Insufficient balance!");
+    }
 
-    }  
-    } catch (error) {
-        console.log("Error"+error.message);
-        
-    }     
-    
+    console.log("Withdrawal successful");
+    console.log("Remaining Balance:", balance - amount);
+
+  } catch (error) {
+    console.log("Error:", error.message);
+  }
 }
-Accountcreation(6000);
- 
+
+// function calls
+withdraw(5000, 2000);  
+withdraw(5000, 7000); 
